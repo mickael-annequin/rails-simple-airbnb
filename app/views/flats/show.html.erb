@@ -1,0 +1,19 @@
+<div class="container">
+  <img src="<%= @flat.picture_url %>" class="img-fluid w-100 mb-3" style="height: 300px; object-fit: cover;" alt="<%= @flat.name %>">
+  <div class="card card-body mt-3 mb-3">
+    <h2><%= @flat.name %></h2>
+    <p><%= @flat.address %></p>
+  </div>
+  <div class="card card-body mb-3">
+    <h4>A bit more about this flat...</h4>
+    <p><%= @flat.description %></p>
+  </div>
+  <div class="card card-body mb-3">
+    <h4>Details</h4>
+    <p><i class="fa-solid fa-users"></i> <%= @flat.number_of_guests %>  - <i class="fa-solid fa-euro-sign"></i> <%= @flat.price_per_night %> </p>
+  </div>
+  <div class="card card-body mb-3">
+    <%= link_to "Edit this flat", edit_flat_path, class:"btn btn-outline-primary" %>
+    <%= link_to "Delete this flat", @flat, class:"btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+</div>
